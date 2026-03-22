@@ -1,16 +1,21 @@
-apply plugin: 'com.android.application'
-
 android {
-    compileSdkVersion 33
+    namespace "com.aditya.earbudpopup"
+
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.earbudpopup"
-        minSdkVersion 24
-        targetSdkVersion 33
+        applicationId "com.aditya.earbudpopup"
+        minSdk 21
+        targetSdk 33
         versionCode 1
         versionName "1.0"
     }
-}
 
-dependencies {
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled false
+        }
+    }
 }
