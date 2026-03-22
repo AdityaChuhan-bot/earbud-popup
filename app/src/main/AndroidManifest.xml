@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aditya.earbudpopup">
 
     <!-- Bluetooth permissions -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -7,7 +8,8 @@
     <uses-permission
         android:name="android.permission.BLUETOOTH_CONNECT"
         android:usesPermissionFlags="neverForLocation" />
-    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
         android:usesPermissionFlags="neverForLocation" />
 
     <!-- Overlay permission -->
@@ -17,7 +19,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
 
-    <!-- Receive boot for persistence -->
+    <!-- Receive boot -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -28,7 +30,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EarbudPopupApp">
 
-        <!-- Main activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -38,13 +39,11 @@
             </intent-filter>
         </activity>
 
-        <!-- Background connection service -->
         <service
             android:name=".ConnectionService"
             android:exported="false"
             android:foregroundServiceType="connectedDevice" />
 
-        <!-- Bluetooth broadcast receiver -->
         <receiver
             android:name=".EarbudReceiver"
             android:exported="true">
