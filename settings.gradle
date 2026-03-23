@@ -1,0 +1,2 @@
+rootProject.name = "earbud-popup"
+include ':app'
